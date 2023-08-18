@@ -1,4 +1,5 @@
-# Spring Boot를 이용해서 게시판 만들기
+# Spring Boot를 이용해서 게시판 만들기[![Build Status](https://app.travis-ci.com/PARKSEGUN/board_project.svg?branch=main)](https://app.travis-ci.com/PARKSEGUN/board_project)
+
 
 ## 개발환경
 - IDE: IntelliJ IDEA Community

@@ -22,7 +22,7 @@ script:
   - ./gradlew clean build
 
 before_deploy:
-  - zip -r  *
+  - zip -r springboot-webservice *
   - mkdir -p deploy
   - mv springboot-webservice.zip deploy/springboot2-webservice.zip
 

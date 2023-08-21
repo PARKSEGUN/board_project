@@ -21,7 +21,7 @@ before_install:
 script:
   - ./gradlew clean build
 
-before_deploy:
+before_deploy: #전체 정보를 zip으로 압축하는 것이 아닌 필요한 정보만 골라서 압축하기위한 설정
   - mkdir -p before-deploy # travis에서 S3로 특정파일만 업로드는 불가하기때문에 항상 디렉토리 생성 zip에 포함시킬 파일들을 담을 디렉토리 생성
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
@@ -66,4 +66,4 @@ notifications:
       - qkrtprjs456@gmail.com
 
 
-#travis 확인 9
+#배포 자동화 구성 1차

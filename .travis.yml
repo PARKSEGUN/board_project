@@ -19,8 +19,6 @@ cache:
 before_install:
   - chmod +x gradlew
 
-before_script:
-  - mysql -e 'create database myapp_test;'
 script:
   - ./gradlew clean build
 

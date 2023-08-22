@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()   //csrf 토큰 비활성화 (테스트시 걸어두는 게 좋음)
                 .authorizeRequests()    //인증요청이들어올때
-                .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/header", "/footer", "/test")    //auth/밑으로 들어오면 + 폴더 허용도 해줘야한다
+                .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/header", "/footer", "/test","/profile")    //auth/밑으로 들어오면 + 폴더 허용도 해줘야한다
                 .permitAll()        //누구나 허용
                 .anyRequest()   //그밖에는
                 .authenticated()   //인증이 되어야된다

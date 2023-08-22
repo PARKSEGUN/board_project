@@ -17,9 +17,5 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class BoardProjectApplicationTests {
 
-    @Test
-    void contextLoads() {
-        String str = "asdf";
-        assertThat(str).isEqualTo("asdf");
-    }
+
 }

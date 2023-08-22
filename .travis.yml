@@ -18,6 +18,9 @@ cache:
 #여기선 프로젝트 내부에 둔 gradlew을 통해 clean & build 를 수행합니다
 before_install:
   - chmod +x gradlew
+
+before_script:
+  - mysql -e 'create database myapp_test;'
 script:
   - ./gradlew clean build
 

@@ -9,7 +9,8 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-CURRENT_PID=$(pgrep -fl board_project | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -f ${PROJECT_NAME}.*.jar)
+#CURRENT_PID=$(pgrep -fl board_project | grep jar | awk '{print $1}')
 #pgrep -fl board_project | grep jar -> 애플리케이션 이름으로된 jar 프로그램 찾기
 #awk '{print $1}' -> 해당 ID를 찾는다.
 

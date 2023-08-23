@@ -1,0 +1,59 @@
+
+# local 환경
+
+
+# 서버 포트 설정
+server:
+  port: 8082
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
+# database 연동 설정
+spring:
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+
+#    view:
+#      prefix: WEB-INF/views/
+#      suffix: .html
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://springboot-webservice.cq8omlty7pze.ap-northeast-2.rds.amazonaws.com:3306/webservice?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: qkrtprjs
+    password: qkrtprjs0505
+  thymeleaf:
+    cache: false
+
+
+  # spring data jpa 설정
+  jpa:
+    open-in-view: true
+    database: mysql   # 추가 해준 부분
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect # 추가 해준 부분
+    hibernate:
+      ddl-auto: create
+
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        #DB컬럼에 저장될 이름의 전략을 설정(<- 이것은 java로 씌여져있는그대로 설정)
+      use-new-id-generator-mappings: false  #JPA에서 기본적으로 제공하는 전략을 따라가지 않겠다
+    show-sql: false  #테이블이 만들어지는 sql이 보여진다
+    properties:
+      hibernate.format_sql: false  #sql이 깔끔하게 보여진다
+
+  config:
+    activate:
+      on-profile:
+cos:
+  key: cos1234
+  jackson:
+    serialization:
+      fail-on-empty-beans: false

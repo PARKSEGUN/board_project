@@ -18,8 +18,8 @@ sleep 10
 for RETRY_COUNT in {1..10}
 do
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
-#   #/health의 결과는 {"status":"real"}와 같이 나옵니다.
-#이는 저희가 처음에 추가한 org.springframework.boot:spring-boot-starter-actuator 의존성 덕분입니다.
+#이전에 만들어놓은 RestController의 함수를 사용해서 반환받기 위함
+
   UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)  #wc -l real이 들어간 개수 세기
 
   if [ ${UP_COUNT} -ge 1 ]

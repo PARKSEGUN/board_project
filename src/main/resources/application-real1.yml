@@ -12,7 +12,6 @@ server:
       enabled: true
       force: true
 
-
 # database 연동 설정
 spring:
 

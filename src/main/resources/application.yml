@@ -15,6 +15,7 @@ server:
 
 # database 연동 설정
 spring:
+  profiles:
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss

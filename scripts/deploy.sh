@@ -36,9 +36,12 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
-nohup java -jar $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
-#nohup java -jar $REPOSITORY/jar/$JAR_NAME &
-#nohup java -jar \
-#    -Dspring.config.location=classpath:/application.properties,classpath:/application-real.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties \
-#    -Dspring.profiles.active=real \
-#    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
+nohup java -jar \
+  #-Dsrping 명령어로 자바 프로젝트를 실행할 때
+     #
+     #.yml, properties등 불러오고 싶은 파일을 명시 해주어야 한다.
+     #
+     #명시 해주지 않으면 불러올 수 없고, 에러 또한 발생하지 않아 삽질의 위험이 있다.
+    -Dspring.config.location=classpath:/application.yml, \
+    -Dspring.profiles.active=$IDLE_PROFILE \
+    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &

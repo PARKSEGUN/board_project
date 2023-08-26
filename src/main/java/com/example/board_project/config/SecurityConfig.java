@@ -9,9 +9,14 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.firewall.DefaultHttpFirewall;
+import org.springframework.security.web.firewall.HttpFirewall;
+import org.springframework.security.web.firewall.HttpStatusRequestRejectedHandler;
+import org.springframework.security.web.firewall.RequestRejectedHandler;
 
 //빈 등록 : 스프링 컨테이너에서 객체를 관리할 수 있게 하는 것
 
@@ -32,6 +37,14 @@ public class SecurityConfig {
     }
     //시큐리티가 대신 로그인을 해줄때에 password를 가로채기를 하는데 해당 password가 뭘로 해쉬가 되어 회원가입이 되었었는지를 알아야
     //같은 해쉬로 암호화해서 DB에 있는 해쉬랑 비교가 가능하다.
+
+
+
+
+    @Bean
+    RequestRejectedHandler requestRejectedHandler() {
+        return new HttpStatusRequestRejectedHandler();
+    }
 
     //새로 도입된 방식 사용하자
     @Bean

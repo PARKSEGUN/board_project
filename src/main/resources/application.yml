@@ -26,8 +26,8 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://springboot-webservice.cq8omlty7pze.ap-northeast-2.rds.amazonaws.com:3306/webservice?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: qkrtprjs
+    url: jdbc:mysql://localhost:3306/blogproject?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
     password: qkrtprjs0505
   thymeleaf:
     cache: false

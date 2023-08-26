@@ -49,7 +49,7 @@ public class BoardController {
         model.addAttribute("replyList", replyCommentDtoList);
         model.addAttribute("board", boardSelectDto);
         model.addAttribute("loginUser", userSelectDto);
-        return "/board/detail";
+        return "board/detail";
     }
     @GetMapping("/auth/board/detail/{boardId}")
     public String detailForm(@PathVariable int boardId, Model model) {
@@ -58,7 +58,7 @@ public class BoardController {
         model.addAttribute("replyList", replyCommentDtoList);
         model.addAttribute("board", boardSelectDto);
       //  model.addAttribute("loginUser", null);
-        return "/board/detail";
+        return "board/detail";
     }
 
     @GetMapping("/board/modifyForm/{boardId}")

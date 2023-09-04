@@ -18,7 +18,7 @@
 ## 주요 기능
 - 회원관리
     - 회원가입
-    - 로그인(spring security 사용)
+    - 로그인(spring security, kakaoLoginAPI 사용)
     - 상세조회
     - 수정
     - 삭제
@@ -32,6 +32,9 @@
   - 게시글 검색
   - 게시글 페이징 처리
   - 관리자 기능
+  - 카테고리 기능
+  - 대댓글 기능
+  
 
 ## application.yml 설정
 

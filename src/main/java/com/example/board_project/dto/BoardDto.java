@@ -25,7 +25,7 @@ public class BoardDto { //오직 Board의 정보만 갖고있다.
 
     private int hit;    //board 가 작성되는 순간 0 으로 설정
 
-    private int userId;
+    private int userComputer;
 
     private Timestamp createTime;
 
@@ -36,7 +36,6 @@ public class BoardDto { //오직 Board의 정보만 갖고있다.
                 .category(board.getCategory())
                 .content(board.getContent())
                 .hit(board.getHit())
-                .userId(board.getUser().getId())
                 .createTime(board.getCreateTime())
                 .build();
         return boardDto;
